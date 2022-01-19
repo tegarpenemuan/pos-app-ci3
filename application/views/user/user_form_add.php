@@ -48,7 +48,7 @@
                         </div>
                         <div class="form-group">
                             <label for="address">Address</label>
-                            <textarea name="address" id="address" cols="30" rows="10" class="form-control" autocomplete="off"><?= set_value("address") ?></textarea>
+                            <textarea name="address" id="address" class="form-control" autocomplete="off"><?= set_value("address") ?></textarea>
                         </div>
                         <div class="form-group <?= form_error('level') ? 'has-error' : null ?>">
                             <label for="level">Level *</label>

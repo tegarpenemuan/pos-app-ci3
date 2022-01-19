@@ -16,7 +16,7 @@
         <div class="box-header">
             <h3 class="box-title">Data Suppliers</h3>
             <div class="pull-right">
-                <a href="<?= site_url('supplier/add') ?>" class="btn btn-primary btn-flat"><i class="fa fa-user-plus"></i> Create</a>
+                <a href="<?= site_url('supplier/add') ?>" class="btn btn-primary btn-flat"><i class="fa fa-plus"></i> Create</a>
             </div>
         </div>
         <div class="box-body table-responsive">
