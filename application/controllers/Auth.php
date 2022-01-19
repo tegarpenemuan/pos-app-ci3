@@ -13,8 +13,8 @@ class Auth extends CI_Controller
     {
         $post = $this->input->post(null, TRUE);
         if (isset($post['login'])) {
-            $this->load->model('users_m');
-            $query = $this->users_m->login($post);
+            $this->load->model('user_m');
+            $query = $this->user_m->login($post);
 
             if ($query->num_rows() > 0) {
                 $row = $query->row();

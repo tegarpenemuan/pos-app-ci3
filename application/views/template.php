@@ -88,7 +88,7 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="<?= base_url() ?>/assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                                <span class="hidden-xs">Admin</span>
+                                <span class="hidden-xs"><?= $this->fungsi->user_login()->username ?></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
@@ -96,8 +96,8 @@
                                     <img src="<?= base_url() ?>/assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                     <p>
-                                        Tegar Penemuan
-                                        <small>Bantarkawung, Jawa Tengah</small>
+                                        <?= $this->fungsi->user_login()->name ?>
+                                        <small><?= $this->fungsi->user_login()->address ?></small>
                                     </p>
                                 </li>
 
@@ -129,7 +129,7 @@
                         <img src="<?= base_url() ?>/assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Admin</p>
+                        <p><?= ucfirst($this->fungsi->user_login()->username) ?></p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
