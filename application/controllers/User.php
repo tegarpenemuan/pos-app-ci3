@@ -3,13 +3,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class User extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        check_not_login();
+        $this->load->model('user_m');
+    }
+
     public function index()
     {
-        check_not_login();
-
-        $this->load->model('user_m');
         $data['row'] = $this->user_m->get();
-
         $this->template->load('template', 'user/user_data', $data);
     }
 
@@ -28,10 +31,17 @@ class User extends CI_Controller
         $this->form_validation->set_message('matches', '%s tidak sesuai dengan password');
         $this->form_validation->set_message('is_unique', '%s sudah dipakai, silahkan ganti');
 
+        $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
+
         if ($this->form_validation->run() == false) {
             $this->template->load('template', 'user/user_form_add');
         } else {
-            echo "proses simpan data user baru";
+            $post = $this->input->post(null, false);
+            $this->user_m->add($post);
+            if ($this->db->affected_rows() > 0) {
+                echo "<script>alert('Data berhasil disimpan');</script>";
+            }
+            echo "<script>window.location='" . site_url('user') . "';</script>";
         }
     }
 }

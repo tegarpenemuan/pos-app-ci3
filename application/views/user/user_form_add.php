@@ -23,35 +23,41 @@
         <div class="box-body">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
-                    <?php echo validation_errors(); ?>
+                    <?php //echo validation_errors(); 
+                    ?>
                     <form action="" method="post">
-                        <div class="form-group">
+                        <div class="form-group <?= form_error('fullname') ? 'has-error' : null ?>">
                             <label for="name">Name *</label>
                             <input type="text" name="fullname" class="form-control" id="name" value="<?= set_value("fullname") ?>" autocomplete="off">
+                            <?= form_error('fullname') ?>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group <?= form_error('username') ? 'has-error' : null ?>">
                             <label for="username">Username *</label>
                             <input type="text" name="username" class="form-control" id="username" value="<?= set_value("username") ?>" autocomplete="off">
+                            <?= form_error('username') ?>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group <?= form_error('password') ? 'has-error' : null ?>">
                             <label for="pass">Password *</label>
                             <input type="password" name="password" class="form-control" id="pass" value="<?= set_value("password") ?>" autocomplete="off">
+                            <?= form_error('password') ?>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group <?= form_error('passconf') ? 'has-error' : null ?>">
                             <label for="cpass">Password Confirmation *</label>
                             <input type="password" name="passconf" class="form-control" id="cpass" value="<?= set_value("passconf") ?>" autocomplete="off">
+                            <?= form_error('passconf') ?>
                         </div>
                         <div class="form-group">
                             <label for="address">Address</label>
                             <textarea name="address" id="address" cols="30" rows="10" class="form-control" autocomplete="off"><?= set_value("address") ?></textarea>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group <?= form_error('level') ? 'has-error' : null ?>">
                             <label for="level">Level *</label>
                             <select name="level" class="form-control" id="level">
                                 <option value="">- Pilih -</option>
-                                <option value="1">Admin</option>
-                                <option value="2">Kasir</option>
+                                <option value="1" <?= set_value("level") == 1 ? "selected" : null ?>>Admin</option>
+                                <option value="2" <?= set_value("level") == 2 ? "selected" : null ?>>Kasir</option>
                             </select>
+                            <?= form_error('level') ?>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-flat">
