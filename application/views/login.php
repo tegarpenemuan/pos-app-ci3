@@ -34,7 +34,7 @@
         <div class="login-box-body">
             <p class="login-box-msg">Sign in to start your session</p>
 
-            <form action="" method="post">
+            <form action="<?= site_url('auth/process') ?>" method="post">
                 <div class="form-group has-feedback">
                     <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -47,7 +47,7 @@
                     <div class="col-xs-8"></div>
 
                     <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                        <button type="submit" name="login" class="btn btn-primary btn-block btn-flat">Sign In</button>
                     </div>
                     <!-- /.col -->
                 </div>
