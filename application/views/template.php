@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="<?= base_url() ?>/assets/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/dist/css/skins/_all-skins.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -224,6 +226,15 @@
     <script src="<?= base_url() ?>/assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?= base_url() ?>/assets/dist/js/adminlte.min.js"></script>
+    <!-- DataTables -->
+    <script src="<?= base_url() ?>/assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url() ?>/assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#table1').DataTable();
+        });
+    </script>
 </body>
 
 </html>
