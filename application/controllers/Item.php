@@ -165,4 +165,10 @@ class item extends CI_Controller
         // echo "<script>window.location='" . site_url('item') . "';</script>";
         redirect('item');
     }
+
+    public function barcode_qrcode($id)
+    {
+        $data['row'] = $this->item_m->get($id)->row();
+        $this->template->load('template', 'product/item/barcode_qrcode', $data);
+    }
 }
