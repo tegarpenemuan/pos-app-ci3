@@ -26,6 +26,8 @@
             ?>
             <br>
             <?= $row->barcode ?>
+            <br><br>
+            <a href="<?= site_url('item/barcode_print/' . $row->item_id) ?>" class="btn btn-default btn-flat btn-xs" target="_blank"><i class="fa fa-print"></i> Print</a>
         </div>
     </div>
 

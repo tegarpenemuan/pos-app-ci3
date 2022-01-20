@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'ed57c94f999ae4bafeb643238ad474e8903c2ede',
+    'reference' => 'd9a5e1666e6a5b94359eaa21c59b56df56a5e55b',
     'name' => 'almasaeed2010/adminlte',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'ed57c94f999ae4bafeb643238ad474e8903c2ede',
+      'reference' => 'd9a5e1666e6a5b94359eaa21c59b56df56a5e55b',
     ),
     'bacon/bacon-qr-code' => 
     array (
@@ -71,6 +71,15 @@ private static $installed = array (
       ),
       'reference' => '5abf82f213618696dda8e3bf6f64dd042d8542b2',
     ),
+    'dompdf/dompdf' => 
+    array (
+      'pretty_version' => 'v1.1.1',
+      'version' => '1.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'de4aad040737a89fae2129cdeb0f79c45513128d',
+    ),
     'endroid/qr-code' => 
     array (
       'pretty_version' => '4.4.7',
@@ -79,6 +88,24 @@ private static $installed = array (
       array (
       ),
       'reference' => 'd9f12af739c11c70fa1e8132dba8f849395e939b',
+    ),
+    'phenx/php-font-lib' => 
+    array (
+      'pretty_version' => '0.5.4',
+      'version' => '0.5.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'dd448ad1ce34c63d09baccd05415e361300c35b4',
+    ),
+    'phenx/php-svg-lib' => 
+    array (
+      'pretty_version' => '0.3.4',
+      'version' => '0.3.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f627771eb854aa7f45f80add0f23c6c4d67ea0f2',
     ),
     'picqer/php-barcode-generator' => 
     array (
@@ -95,6 +122,15 @@ private static $installed = array (
       array (
         0 => '*',
       ),
+    ),
+    'sabberworm/php-css-parser' => 
+    array (
+      'pretty_version' => '8.4.0',
+      'version' => '8.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e41d2140031d533348b2192a83f02d8dd8a71d30',
     ),
     'shama/baton' => 
     array (
