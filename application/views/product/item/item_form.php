@@ -40,7 +40,7 @@
                             <select name="category" id="category" class="form-control">
                                 <option value="">- Pilih -</option>
                                 <?php foreach ($category->result() as $key => $data) : ?>
-                                    <option value="<?= $data->category_id ?>"><?= $data->name ?></option>
+                                    <option value="<?= $data->category_id ?>" <?= $data->category_id == $row->category_id ? "selected" : null ?>><?= $data->name ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="form-group">
                             <label for="price">Price *</label>
-                            <input type="number" min="0" name="price" class="form-control" id="price" value="<?= $row->name ?>" autocomplete="off" required>
+                            <input type="number" min="0" name="price" class="form-control" id="price" value="<?= $row->price ?>" autocomplete="off" required>
                         </div>
                         <div class="form-group">
                             <button type="submit" name="<?= $page ?>" class="btn btn-success btn-flat">
