@@ -150,6 +150,12 @@ class item extends CI_Controller
 
     public function del($id)
     {
+        $item = $this->item_m->get($id)->row();
+        if ($item->image != null) {
+            $target_file = './uploads/product/' . $item->image;
+            unlink($target_file);
+        }
+
         $this->item_m->del($id);
 
         if ($this->db->affected_rows() > 0) {

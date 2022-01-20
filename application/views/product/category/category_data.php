@@ -35,7 +35,7 @@
                             <td><?= $data->name ?></td>
                             <td class="text-center" width="160px" nowrap>
                                 <a href="<?= site_url('category/edit/' . $data->category_id) ?>" class="btn btn-primary btn-flat btn-xs"><i class="fa fa-pencil"></i> Update</a>
-                                <a href="<?= site_url('category/del/' . $data->category_id) ?>" onclick="return confirm('Yakin hapus data?');" class="btn btn-danger btn-flat btn-xs"><i class="fa fa-trash-o"></i> Update</a>
+                                <a href="<?= site_url('category/del/' . $data->category_id) ?>" onclick="return confirm('Yakin hapus data?');" class="btn btn-danger btn-flat btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
                             </td>
                         </tr>
                     <?php } ?>
