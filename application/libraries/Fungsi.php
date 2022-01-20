@@ -30,6 +30,7 @@ class Fungsi
         $dompdf->render();
 
         // Output the generated PDF to Browser
+        // $dompdf->stream($filename, array("Attachment" => 0));
         $dompdf->stream($filename, array("Attachment" => 0));
     }
 }
