@@ -1,4 +1,5 @@
 <?php
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class item extends CI_Controller
@@ -153,7 +154,9 @@ class item extends CI_Controller
         $item = $this->item_m->get($id)->row();
         if ($item->image != null) {
             $target_file = './uploads/product/' . $item->image;
+            $qrcode = './uploads/qrcode/item-' . $item->barcode . '.png';
             unlink($target_file);
+            unlink($qrcode);
         }
 
         $this->item_m->del($id);
