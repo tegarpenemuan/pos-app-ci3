@@ -43,7 +43,7 @@
                             </span>
                         </div>
                         <div class="form-group">
-                            <label for="item_name">Item Name *</label>
+                            <label for="item_name">Item Name</label>
                             <input type="text" name="item_name" class="form-control" id="item_name" readonly>
                         </div>
                         <div class="form-group">
@@ -66,6 +66,9 @@
                             <label for="detail">Supplier</label>
                             <select name="supplier" id="detail" class="form-control">
                                 <option value="">- Pilih -</option>
+                                <?php foreach ($supplier as $key => $data) : ?>
+                                    <option value="<?= $data->supplier_id ?>"><?= $data->name ?></option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
                         <div class="form-group">
@@ -86,3 +89,65 @@
 
 </section>
 <!-- /.content -->
+
+<div class="modal fade" id="modal-item">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Select Product Item</h4>
+            </div>
+            <div class="modal-body table-responsive">
+                <table class="table table-bordered table-striped" id="table1">
+                    <thead>
+                        <tr>
+                            <th>Barcode</th>
+                            <th>Name</th>
+                            <th>Unit</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($item as $key => $data) : ?>
+                            <tr>
+                                <td><?= $data->barcode ?></td>
+                                <td><?= $data->name ?></td>
+                                <td><?= $data->unit_name ?></td>
+                                <td class="text-right"><?= indo_currency($data->price) ?></td>
+                                <td class="text-right"><?= $data->stock ?></td>
+                                <td>
+                                    <button class="btn btn-xs btn-info" id="select" data-id="<?= $data->item_id ?>" data-barcode="<?= $data->barcode ?>" data-name="<?= $data->name ?>" data-unit="<?= $data->unit_name ?>" data-stock="<?= $data->stock ?>">
+                                        <i class="fa fa-check"></i> Select
+                                    </button>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '#select', function() {
+            var item_id = $(this).data('id');
+            var barcode = $(this).data('barcode');
+            var name = $(this).data('name');
+            var unit_name = $(this).data('unit');
+            var stock = $(this).data('stock');
+
+            $('#item_id').val(item_id);
+            $('#barcode').val(barcode);
+            $('#item_name').val(name);
+            $('#unit_name').val(unit_name);
+            $('#stock').val(stock);
+            $('#modal-item').modal('hide');
+        })
+    })
+</script>
