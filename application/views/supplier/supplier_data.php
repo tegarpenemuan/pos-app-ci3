@@ -41,7 +41,9 @@
                             <td><?= $data->description ?></td>
                             <td class="text-center" width="160px" nowrap>
                                 <a href="<?= site_url('supplier/edit/' . $data->supplier_id) ?>" class="btn btn-primary btn-flat btn-xs"><i class="fa fa-pencil"></i> Update</a>
-                                <a href="<?= site_url('supplier/del/' . $data->supplier_id) ?>" onclick="return confirm('Yakin hapus data?');" class="btn btn-danger btn-flat btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
+                                <!-- <a href="<?= site_url('supplier/del/' . $data->supplier_id) ?>" onclick="return confirm('Yakin hapus data?');" class="btn btn-danger btn-flat btn-xs"><i class="fa fa-trash-o"></i> Delete</a> -->
+
+                                <a href="#modalDelete" data-toggle="modal" onclick="$('#modalDelete #formDelete').attr('action', '<?= site_url('supplier/del/' . $data->supplier_id) ?>')" class="btn btn-danger btn-flat btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -52,3 +54,22 @@
 
 </section>
 <!-- /.content -->
+
+<div class="modal fade" id="modalDelete">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Yakin akan menghapus data ini?</h4>
+            </div>
+            <div class="modal-footer">
+                <form id="formDelete" action="" method="post">
+                    <button class="btn btn-default" data-dismiss="modal">Tidak</button>
+                    <button class="btn btn-danger" type="submit">Hapus</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
