@@ -35,7 +35,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($row->result() as $key => $data) { ?>
+                    <!-- <?php foreach ($row->result() as $key => $data) { ?>
                         <tr>
                             <td><?= $key + 1 ?>.</td>
                             <td>
@@ -57,7 +57,7 @@
                                 <a href="<?= site_url('item/del/' . $data->item_id) ?>" onclick="return confirm('Yakin hapus data?');" class="btn btn-danger btn-flat btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
                             </td>
                         </tr>
-                    <?php } ?>
+                    <?php } ?> -->
                 </tbody>
             </table>
         </div>
@@ -65,3 +65,28 @@
 
 </section>
 <!-- /.content -->
+
+<script>
+    $(document).ready(function() {
+        $('#table1').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('item/get_ajax') ?>",
+                "type": "POST",
+            },
+            "columnDefs": [{
+                    "targets": [5, 6],
+                    "className": 'text-right'
+                }, {
+                    "targets": [7, -1],
+                    "className": 'text-center'
+                }, {
+                    "targets": [0, 7, -1],
+                    "orderable": false
+                }
+
+            ]
+        });
+    });
+</script>
