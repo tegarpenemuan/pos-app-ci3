@@ -42,7 +42,7 @@
                             <td class="text-center"><?= indo_date($data->date) ?></td>
                             <td class="text-center" width="160px" nowrap>
                                 <a class="btn btn-default btn-flat btn-xs"><i class="fa fa-eye"></i> Detail</a>
-                                <a href="<?= site_url('stock/in/del/' . $data->stock_id) ?>" onclick="return confirm('Yakin hapus data?');" class="btn btn-danger btn-flat btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
+                                <a href="<?= site_url('stock/in/del/' . $data->stock_id . '/' . $data->item_id) ?>" onclick="return confirm('Yakin hapus data?');" class="btn btn-danger btn-flat btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
                             </td>
                         </tr>
                     <?php } ?>
